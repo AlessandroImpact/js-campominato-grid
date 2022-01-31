@@ -1,0 +1,82 @@
+/* REGOLE GENERALI*/
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background-color: #011627;
+    font-family: sans-serif;
+}
+
+/* REGOLE HEADER*/
+
+header {
+    padding-top: 20px;
+    background-color: #fff;
+    color: black;
+    
+    width: 100%;
+    height: 100px;
+}
+
+.logo {
+    padding-left: 20%;
+ float: left;
+}
+
+
+header .logo h1   {
+    
+    font-size: 40px;
+    font-weight: 600;
+}
+
+
+.container-difficolta {
+
+    
+    padding-right: 20%;
+    float: right;
+
+
+}
+
+header::after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+/* REGOLE GRID&SQUARE*/
+
+.container {
+    width: 500px;
+    margin: 50px auto;
+    border: solid 1px white;
+    
+}
+
+#grid {
+    height: 500px;
+}
+
+#grid::after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+.square {
+    border: solid 1px #fff;
+    width: calc(100% / 8);
+    height: calc(100% / 8);
+    float: left;
+}
+
+.checked {
+    background-color:aquamarine;
+}
