@@ -38,7 +38,7 @@ header .logo h1   {
 
 .container-difficolta {
 
-    
+
     padding-right: 20%;
     float: right;
 
@@ -76,6 +76,8 @@ header::after {
     height: calc(100% / 8);
     float: left;
 }
+
+
 
 .checked {
     background-color:aquamarine;
