@@ -1,84 +1,87 @@
-/* REGOLE GENERALI*/
-
-* {
-    padding: 0;
+*{
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+    width: 70%;
+    padding: 15px 0;
+    margin: auto;
+}
+
+#cont-1{
+    display: flex;
+    justify-content: space-between;
+}
+
+main{
+    background-color: aquamarine;
+    padding: 30px 0;
+}
+
+.box{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#cont-2{
+    width: 600px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+.btn1{
+    padding: 2px 0;
+    padding-right: 100px;
+}
+
+.btn2{
+    padding: 2px 30px;
 }
 
 
-body {
-    background-color: #011627;
-    font-family: sans-serif;
-}
 
-/* REGOLE HEADER*/
-
-header {
-    padding-top: 20px;
-    background-color: #fff;
+[class*='square']{
+    border: 3px solid black;
     color: black;
-    
-    width: 100%;
-    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.logo {
-    padding-left: 20%;
- float: left;
+.squareEasy{
+    width: calc(100% / 10);
+    height: calc(100% / 10); 
 }
 
-
-header .logo h1   {
-    
-    font-size: 40px;
-    font-weight: 600;
+.squareHard{
+    width: calc(100% / 9);
+    height: calc(100% / 9);
 }
 
-
-.container-difficolta {
-
-
-    padding-right: 20%;
-    float: right;
-
-
+.squareInsane{
+    width: calc(100% / 7);
+    height: calc(100% / 7);
 }
 
-header::after {
-    display: block;
-    content: "";
-    clear: both;
+.squareBlue{
+    background-color: cornflowerblue;
+    color: white;
 }
 
-/* REGOLE GRID&SQUARE*/
-
-.container {
-    width: 500px;
-    margin: 50px auto;
-    border: solid 1px white;
-    
+.squareRed{
+    background-color: red;
+    color: white;
 }
 
-#grid {
-    height: 500px;
-}
-
-#grid::after {
-    display: block;
-    content: "";
-    clear: both;
-}
-
-.square {
-    border: solid 1px #fff;
-    width: calc(100% / 8);
-    height: calc(100% / 8);
-    float: left;
-}
-
-
-
-.checked {
-    background-color:aquamarine;
+.none{
+    display: none;
 }
