@@ -48,10 +48,7 @@ play.addEventListener('click', function() {
         
         node.classList.add('appoggio');   // aggiungo una classe nuova per evitare che square sia lultima classe dell'elenmento corrente
 
-        node.addEventListener('click', function() 
-            {
-                this.classList.add('squareBlue');  //se utente clicca lo square colora di blu
-            })
+        node.addEventListener('click', handleCellClick);
 
         grid.appendChild(node);
     }
@@ -72,6 +69,14 @@ play.addEventListener('click', function() {
 })
 
 
+
+function handleCellClick (){
+
+    this.classList.add('squareBlue');
+
+    this.removeEventListener('click' , handleCellClick); //impedisco di ricliccare
+
+}
 
 
 

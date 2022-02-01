@@ -58,7 +58,7 @@ main{
 
 
 [class*='square']{
-    border: 3px solid black;
+    border: 2px solid black;
     color: black;
     display: flex;
     justify-content: center;
