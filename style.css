@@ -62,7 +62,7 @@ main{
     height: calc(100% / 10); 
 }
 
-.squareHard{
+.squareMedium{
     width: calc(100% / 9);
     height: calc(100% / 9);
 }

@@ -1,39 +1,96 @@
 // inserisco in una costante l'elemento container
 
-const gridElement = document.getElementById('grid');
+const grid = document.getElementById('cont-2');
 
 // inserisco in una costante l'elemento bottone
 
-const playButton = document.getElementById('play-btn');
+const play = document.getElementById('play');
+
+//inserisco in una costante l'h1 che sparirà con il click su 'play'
+
+const regole = document.getElementById('regolamento');
 
 //inserisco in una costante l'elemento selettore di difficoltà
 
-const difficultySelector = document.getElementById('difficolta');
+const select = document.getElementById('select');
+
+
 
 //funzione per l'inizio del gioco una volta premuto il bottone
 
-playButton.addEventListener('click' , function () {
+//controllo la difficioltà selezionata e
 
-    chosenDifficulty = parseInt(difficultySelector.value);
+play.addEventListener('click', function() {
+    grid.innerHTML = '';
 
-    if(chosenDifficulty == 1) {
+    let numBox;
+    let diff;
 
-        for(let i=1;i<101;i++){
-            Gioca();
-        }
-
-    }else if(chosenDifficulty==2){
-
-        for(let i=1;i<82;i++){
-            Gioca();
-        }
-    }else if(chosenDifficulty==3){
-        for(let i=1;i<50;i++){
-            Gioca();
-        }
+    if (select.value == 'Insane') {
+         numBox = 49;
+         diff = 'Insane';
+    
+    } else if (select.value == 'Medium') {
+         numBox = 81;
+         diff = 'Medium';
+    
+    } else {
+         numBox = 100;
+         diff = 'Easy';
     }
 
+    //creo dinamicamente la griglia 
+
+    for (let i = 1; i <= numBox; i++) {
+        const node = document.createElement('div');
+        node.innerHTML = i;
+        node.classList.add('square' + diff);
+        
+        node.classList.add('appoggio');
+
+        node.addEventListener('click', function() 
+            {
+                this.classList.add('squareBlue');
+            })
+
+        grid.appendChild(node);
+    }
+
+    //ciclo per il click random degli square che attiva le bombe
+
+    for (let i = 0; i <= 16; i++) {
+        let elements = document.querySelectorAll('.appoggio')
+        let random1 = Math.floor(Math.random() * elements.length);
+        
+        elements[random1].addEventListener('click', function() 
+            {
+                this.classList.add('squareRed');
+                setTimeout(() => {alert('Hai beccato una mina!')}, 200);
+                setTimeout(() => {grid.innerHTML = ''}, 1000);
+            })
+    }
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -57,34 +114,12 @@ for (let i=1; i<64;i++){
     
     gridElement.appendChild(node) // uso appendchild per inserire 
 
-}*/
-
-
-
-
-
-
-//FUNZIONI
-
-
-function Gioca() {
-
-    const node = document.createElement('div'); // creo un div
-
-    node.appendChild(i);
-
-    node.classList.add('square'); // aggiungo al div la classe square
-
-    node.addEventListener('click' , function () {
-
-        console.log(this);
-
-        this.classList.add('checked'); //se premuto arttivo la classe checked che colora lo square
-
-    })
-    
-    gridElement.appendChild(node) // uso appendchild per inserire 
-
 }
 
+
+
+
+
+
+*/
 
