@@ -71,6 +71,8 @@ function Gioca() {
 
     const node = document.createElement('div'); // creo un div
 
+    node.appendChild(i);
+
     node.classList.add('square'); // aggiungo al div la classe square
 
     node.addEventListener('click' , function () {
