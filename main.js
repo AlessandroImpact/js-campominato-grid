@@ -44,13 +44,13 @@ play.addEventListener('click', function() {
     for (let i = 1; i <= numBox; i++) {
         const node = document.createElement('div');
         node.innerHTML = i;
-        node.classList.add('square' + diff);
+        node.classList.add('square' + diff);  // aggiungo la classe in base alla diff 
         
-        node.classList.add('appoggio');
+        node.classList.add('appoggio');   // aggiungo una classe nuova per evitare che square sia lultima classe dell'elenmento corrente
 
         node.addEventListener('click', function() 
             {
-                this.classList.add('squareBlue');
+                this.classList.add('squareBlue');  //se utente clicca lo square colora di blu
             })
 
         grid.appendChild(node);
